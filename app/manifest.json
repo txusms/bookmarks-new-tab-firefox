@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "React new tab",
-  "version": "0.3.1",
-  "author": "Ramkumar K R",
+  "name": "Bookmarks new tab (simple)",
+  "version": "0.0.1",
+  "author": "Txus MS",
   "chrome_url_overrides" : {
     "newtab": "index.html"
   }, 
-  "description":"A Fast and Light weight new tab",
+  "description":"A Fast and Light weight new tab (Fork from Reac new tab).",
   "permissions": [
     "bookmarks",
     "storage"
@@ -15,5 +15,9 @@
     "page": "options.html",
     "open_in_tab": true,
     "browser_style": true
+  },
+  "icons": {
+    "48": "icons/icon_48.png",
+    "96": "icons/icon_96.png"
   }
 }

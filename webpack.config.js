@@ -24,7 +24,13 @@ var OptionsHtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CopyWebpackPluginConfig = new CopyWebpackPlugin([
     {
+       from: __dirname + '/app/icons', to: __dirname + '/dist/icons' 
+    },
+    {
        from: __dirname + '/app/css', to: __dirname + '/dist/css' 
+    },
+    {
+       from: __dirname + '/app/images', to: __dirname + '/dist/images' 
     },
     {
         from: __dirname + '/app/manifest.json', to: __dirname + '/dist/manifest.json'
