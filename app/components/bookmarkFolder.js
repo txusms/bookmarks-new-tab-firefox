@@ -16,13 +16,13 @@ class BookmarkFolder extends Component {
         });
         return(
             <div>
-                <h3>Selected Bookmark Folder </h3> <em>{this.props.bookmark.title}</em>
-                <h3> Select a new Bookmark Folder </h3>
+                <h3>Selected Bookmark Folder / <em>Carpeta de marcadores seleccionada</em></h3> <em>{this.props.bookmark.title}</em>
+                <h3> Select a new Bookmark Folder / <em>Selecciona una nueva carpeta de marcadores</em></h3>
                 <select id="newBookmark" >
                     {options}
                 </select>
 
-                <button onClick={this.setBookmark}>Update</button>
+                <button onClick={this.setBookmark}>Update / <em>Actualizar</em></button>
             </div>
         );
     }

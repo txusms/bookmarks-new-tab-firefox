@@ -8,11 +8,11 @@ class ListView extends Component {
             console.log('item', b);
             if (b.url == undefined) {
                 return (<div key={b.id} key={b.id} className='one'>
-                    <Folder title={b.title} id={b.id} faviconURL={b.faviconURL}/>
+                    <Folder title={b.title} id={b.id} sites={b.children.length} faviconURL={b.faviconURL}/>
                 </div>);
             } else {
                 return (<div key={b.id} key={b.id} className='one'>
-                    <Bookmark title={b.title} url={"/"+b.id} faviconURL={b.faviconURL}/>
+                    <Bookmark title={b.title} url={b.url} faviconURL={b.faviconURL}/>
                 </div>);
             }
         }));
@@ -34,11 +34,13 @@ class Bookmark extends Component {
 
 class Folder extends Component {
     render() {
+
         return (
             <a onClick={() => loadFolder(this.props.id)} title={this.props.title} id={this.props.id}>
 
                 <Favicon url={"images/folder.png"} faviconURL={"images/folder.png"}/>
                 <p className='text'>{this.props.title}</p>
+                <p className='counter'><em>({this.props.sites})</em></p>
             </a>
         );
     }
@@ -49,7 +51,7 @@ class Favicon extends Component {
         var url = this.props.faviconURL;
         return (
             <span>
-                <img src={url} id={url} width="128" height="128" className="thumbnail" />
+                <img src={url} id={url} width="96" height="96" className="thumbnail" />
             </span>
         );
     }
@@ -59,7 +61,17 @@ class Home extends Component {
     render() {
         return (
             <button onClick={home}>
-                Home
+                Home / <em>Inicio</em>
+            </button>
+        );
+    }
+}
+
+class Settings extends Component {
+    render() {
+        return (
+            <button onClick={settings}>
+                Settings / <em>Ajustes</em>
             </button>
         );
     }
@@ -99,7 +111,7 @@ function getAllBookmarks(bookmarkTree, faviconServerURL) {
     for (var i = 0; i < bookmarkTree.length; i++) {
         var element = bookmarkTree[i];
         if ((element.url != undefined) && (element.url.startsWith("http"))) {
-            element.faviconURL = faviconServerURL + "/icon?size=128&url=" + element.url;
+            element.faviconURL = faviconServerURL + "/icon?size=96&url=" + element.url;
             bookmarks.push(element);
         }
         else {
@@ -127,6 +139,10 @@ function home() {
     renderBookmarks();
 }
 
+function settings() {
+    browser.runtime.openOptionsPage()
+}
+
 async function renderBookmarks(id) {
     const prefs = await browser.storage.local.get();
     var faviconServerURL = prefs.faviconServerURL;
@@ -143,5 +159,6 @@ async function renderBookmarks(id) {
     console.log(flattened_bookmarks);
     ReactDOM.render(<ListView bookmarks={flattened_bookmarks} />, document.getElementById('app'));
     ReactDOM.render(<Home/>, document.getElementById('home'));
+    ReactDOM.render(<Settings/>, document.getElementById('settings'));
 }
 renderBookmarks();

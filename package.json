@@ -1,9 +1,9 @@
 {
-  "title": "React New Tab",
-  "name": "react-new-tab-firefox",
-  "version": "0.3.1",
-  "description": "New tab extension built using react",
-  "author": "Ramkumar K R",
+  "title": "Bookmarks New Tab",
+  "name": "bookmarks_new_tab",
+  "version": "0.0.3",
+  "description": "Simple new tab extension (like Safari browser)",
+  "author": "Txus MS",
   "scripts": {
     "clean": "rm -rf ./dist",
     "watch": "webpack --watch",

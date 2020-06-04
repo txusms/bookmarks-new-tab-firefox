@@ -1,19 +1,19 @@
 {
   "manifest_version": 2,
   "name": "Bookmarks new tab (simple)",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "Txus MS",
+  "homepage_url":"https://github.com/txusms/bookmarks-new-tab-firefox",
   "chrome_url_overrides" : {
     "newtab": "index.html"
-  }, 
-  "description":"A Fast and Light weight new tab (Fork from Reac new tab).",
+  },
+  "description":"A Fast and Light weight new tab (Fork from React new tab).",
   "permissions": [
     "bookmarks",
     "storage"
   ],
   "options_ui": {
     "page": "options.html",
-    "open_in_tab": true,
     "browser_style": true
   },
   "icons": {

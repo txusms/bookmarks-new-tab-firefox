@@ -11,25 +11,30 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-row-gap: 20px;
-  margin: auto;
-  padding-top: 2%;
+  /*margin: auto;*/
+  /*padding-top: 2%;*/
+  /*height: auto;*/
+  align-items: flex-start; /* ADDED */
 }
 
 .one {
-  margin: auto;
+  /*margin: auto;*/
   display: block;
   max-width: 150px;
   text-overflow: ellipsis;
   overflow: hidden;
   transition: transform .05s;
+  text-align: center;
 }
 
-a{
+a {
   text-decoration: none;
   color: #337ab7;
+  display: inline-block;
 }
+
 a:hover {
   color: #337ab7;
 
@@ -50,12 +55,23 @@ a:visited {
 }
 
 .text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   margin-top: 0;
+  margin-bottom: 0;
   text-align: center;
   font-family: Helvetica, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: initial;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 0.75em;
+  width: 96px;
+}
+
+.counter {
+  color: gray;
+  margin-top: 2px;
 }
 
 a.customize {

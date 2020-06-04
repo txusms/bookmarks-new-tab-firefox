@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Cache-control" content="public">
+  <head>
+    <meta charset="utf-8">
+  </head>
 
-<head>
-  <!--<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-  <title>Preferences - React new tab</title>
+  <body>
 
-</head>
+    <h2>Bookmark Folder / <em>Carpeta marcadores</em></h2>
+    <div id="bookmark-folder"></div>
 
-<body>
-  <h1>Preferences - React new tab</h1>
+    <h2>Appearance / <em>Apariencia</em></h2>
+    <form id="styleForm" action="#">
+      <textarea name="reactCss" id="reactCss" rows="28" cols="80" placeholder="Enter your Custom CSS here."></textarea>
+      <button type="submit">Update / <em>Actualizar</em></button>
+    </form>
+    <p>Please Note: This CSS will be added as a style tag in the head section of the document.
+      <br />To use pre-defined templates, please visit this
+      <a href="https://github.com/txusms/bookmarks-new-tab-firefox/blob/master/TEMPLATES.md" target="_blank">link</a>.
+    </p>
+    <p><em>Nota: Este CSS será añadido en la sección Head como un Style.
+      <br />Para usar plantillas predefinidas, por favor visita este <a href="https://github.com/txusms/bookmarks-new-tab-firefox/blob/master/TEMPLATES.md" target="_blank">enlace</a>.</em>
+    </p>
 
-  <h2>Bookmark Folder</h2>
-  <div id="bookmark-folder"></div>
+    <h2>Advanced / <em>Avanzado</em></h2>
+    <h3> Icon Server / <em>Servidor de Iconos</em></h3>
+    <form id="serverForm" action="#">
+      <input type="text" id="serverDomain" size="100"/>
+      <button type="submit">Update / <em>Actualizar</em></button>
+    </form>
 
-  <hr />
-
-  <h2>Appearance</h2>
-  <form id="styleForm" action="#">
-    <textarea name="reactCss" id="reactCss" rows="28" cols="80" placeholder="Enter your Custom CSS here."></textarea>
-  </form>
-  <button type="submit" form="styleForm" value="submit" class="default">Update</button>
-  <p>Please Note: This CSS will be added as a style tag in the head section of the document.
-    <br /> To use pre-defined templates, please visit this
-    <a href="https://github.com/ramkumar-kr/react-new-tab-firefox/blob/master/TEMPLATES.md" target="_blank">link</a>.
-  </p>
-
-  <hr />
-  <h2>Advanced</h2>
-  <h3> Icon Server</h3>
-  <p> To serve high quality icons for the bookmarks, I have deployed a <a href="https://github.com/mat/besticon">favicon
-      fetcher service</a> deployed on <a href="https://heroku.com">heroku</a>. In case you wish to host it yourself,
-    please follow the instructions provided in the <a href="https://github.com/mat/besticon">favicon fetcher service</a>
-    and replace the domain in the text box below.</p>
-  <form id="serverForm" action="#">
-    <input type="text" id="serverDomain" size="100"/>
-  </form>
-  <button type="submit" form="serverForm" value="submit" class="default">Update</button>
-</body>
-
+    <p>To serve high quality icons for the bookmarks, Ramkumar has deployed a <a href="https://github.com/mat/besticon">favicon fetcher service</a> deployed on <a href="https://heroku.com">heroku</a>. In case you wish to host it yourself, please follow the instructions provided in the <a href="https://github.com/mat/besticon">favicon fetcher service</a> and replace the domain in the text box above.</p>
+    <p><em>Para ofrecer icono de alta calidad en los marcadores, Ramkumar ha desplegado un <a href="https://github.com/mat/besticon">servicio de búsqueda de favicon</a> en <a href="https://heroku.com">heroku</a>. En el caso en que desees mantener el tuyo propio, por favor, sigue las instrucciones detalladas en el <a href="https://github.com/mat/besticon">servicio de búsqueda de favicon</a> y sustituye el dominio en el campo superior.</em></p>
+  </body>
 </html>

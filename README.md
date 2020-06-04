@@ -1,5 +1,5 @@
-# React New Tab
-New tab extension built using react
+# Bookmarks New Tab
+Simple new tab extension like Safari browser.
 
 ## What's new
 * **Customization** - It is possible to now add user defined CSS and customize the extension
@@ -15,6 +15,4 @@ New tab extension built using react
 * To create the web-ext artifact for the extension, use the xpi script (`npm run xpi`)
 
 ## Known issues
-* ~~No support for folders - All bookmarks are shown instead of having a nested structure.~~
 * No test cases - Need to write tests
-* ~~No customization~~ 
